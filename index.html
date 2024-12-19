@@ -39,6 +39,17 @@
         .background-image p {
             font-size: 1.2rem;
             margin: 10px 0;
+            animation: bounceText 1.5s infinite;
+        }
+
+        /* Efek animasi untuk tulisan */
+        @keyframes bounceText {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         .scroll-down {
