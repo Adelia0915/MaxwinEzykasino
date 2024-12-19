@@ -79,17 +79,17 @@
 
         .image-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+            gap: 20px;
             justify-items: center;
             margin: 20px auto;
-            max-width: 800px;
+            max-width: 1200px; /* Maksimal lebar container */
         }
 
         .image-box img {
             width: 100%;
-            max-width: 120px;
-            height: auto;
+            height: 200px; /* Ukuran gambar */
+            object-fit: cover;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
@@ -101,11 +101,11 @@
             }
 
             .image-container {
-                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+                grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk layar kecil */
             }
 
             .image-box img {
-                max-width: 100px;
+                height: 150px; /* Mengurangi tinggi gambar pada layar kecil */
             }
         }
     </style>
