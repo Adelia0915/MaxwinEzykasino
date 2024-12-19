@@ -62,7 +62,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 20px;
-    background-color: #8B4513;
+    background-color: #8B4513; /* Warna coklat */
     margin: 20px auto;
     max-width: 1200px; /* Maksimal lebar container */
 }
