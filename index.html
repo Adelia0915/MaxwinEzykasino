@@ -80,14 +80,17 @@
         .image-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr); /* 3 kolom untuk desktop */
-            gap: 20px;
+            gap: 20px; /* Jarak antara gambar */
             justify-items: center;
             margin: 20px auto;
             max-width: 1200px; /* Maksimal lebar container */
+            background-color: #8B4513; /* Warna latar belakang coklat */
+            padding: 20px; /* Memberikan sedikit padding agar tidak menempel gambar */
+            border-radius: 10px; /* Agar sudutnya melengkung */
         }
 
         .image-box {
-            border: 2px solid #8B4513; /* Batas coklat */
+            background-color: white; /* Gambar dengan latar belakang putih */
             border-radius: 8px;
             overflow: hidden; /* Agar border melingkari gambar */
         }
