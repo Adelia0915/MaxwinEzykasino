@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jackpot Harian Ezykasino</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
         /* CSS di dalam file untuk kemudahan testing */
         body {
@@ -39,16 +38,15 @@
         .background-image p {
             font-size: 1.2rem;
             margin: 10px 0;
-            animation: bounceText 1.5s infinite;
         }
 
-        /* Efek animasi untuk tulisan */
-        @keyframes bounceText {
+        /* Efek animasi untuk teks tombol */
+        @keyframes bounceTextButton {
             0%, 100% {
                 transform: translateY(0);
             }
             50% {
-                transform: translateY(-10px);
+                transform: translateY(-8px);
             }
         }
 
@@ -150,6 +148,7 @@
             border-radius: 5px;
             margin-top: 20px;
             transition: background-color 0.3s;
+            animation: bounceTextButton 1.5s infinite;
         }
 
         .btn-play:hover {
@@ -164,7 +163,7 @@
         <h1>Selamat Datang di Jackpot Harian Ezykasino</h1>
         <p>Mainkan Sekarang Juga !!!</p>
 
-        <!-- Tombol dengan link -->
+        <!-- Tombol dengan link dan animasi -->
         <a href="http://10ezykasino.net" class="btn-play" target="_blank">Mainkan Sekarang</a>
 
         <!-- Teks Scroll ke bawah dengan panah -->
