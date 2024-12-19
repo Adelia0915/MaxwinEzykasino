@@ -1,6 +1,10 @@
 /* Bagian Latar Belakang */
 .background-image {
-    background-image: url('https://i.ibb.co/n74zC82/casino-chips-background-hd-8k-wallpaper-stock-photographic-image-890746-35288.jpg');
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.5), 
+            rgba(0, 0, 0, 0.5)
+        ), 
+        url('https://i.ibb.co/n74zC82/casino-chips-background-hd-8k-wallpaper-stock-photographic-image-890746-35288.jpg');
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -11,7 +15,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.5); /* Gelap transparan */
 }
 
 .background-image h1 {
@@ -68,12 +71,11 @@
 .image-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 kolom */
-    grid-template-rows: repeat(3, 200px); /* 3 baris */
     gap: 20px;
     justify-content: center;
     margin: 0 auto;
     background-color: #f0f0f0; /* Latar belakang abu-abu terang pada kontainer gambar */
-    padding: 20px; /* Menambahkan padding di dalam kontainer */
+    padding: 20px;
 }
 
 .image-box img {
