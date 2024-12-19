@@ -19,7 +19,7 @@
 
 /* Teks Latar Belakang */
 .background-image h1 {
-    font-size: 2.5em;
+    font-size: 3em;
     font-weight: bold;
     color: #ffcc00;
     margin: 10px 0;
@@ -60,15 +60,15 @@
 .image-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 200px;
-    padding: 200px;
+    gap: 20px;
+    padding: 20px;
     background-color: #f0f0f0;
     margin: 20px auto;
     max-width: 1200px; /* Maksimal lebar container */
 }
 
 .image-container img {
-    width: 400%;
+    width: 100%;
     height: 200px;
     object-fit: cover;
     border-radius: 8px;
@@ -83,12 +83,12 @@
     }
 
     .background-image h1 {
-        font-size: 2em;
+        font-size: 2.5em;
     }
 
     .image-container {
         grid-template-columns: 1fr 1fr; /* 2 kolom untuk layar kecil */
-        max-width: 90%;
+        max-width: 100%;
     }
 
     .image-container img {
