@@ -79,7 +79,7 @@
 
         .image-container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+            grid-template-columns: repeat(3, 1fr); /* 3 kolom untuk desktop */
             gap: 20px;
             justify-items: center;
             margin: 20px auto;
@@ -87,21 +87,31 @@
         }
 
         .image-box img {
-            width: 200%;
-            height: 200px; /* Ukuran gambar */
+            width: 100%;
+            height: 200px; /* Ukuran gambar seragam */
             object-fit: cover;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         /* Responsif */
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             .background-image h1 {
                 font-size: 2rem;
             }
 
             .image-container {
-                grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk layar kecil */
+                grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk layar medium */
+            }
+
+            .image-box img {
+                height: 180px; /* Mengurangi tinggi gambar pada layar medium */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .image-container {
+                grid-template-columns: 1fr; /* 1 kolom untuk layar kecil */
             }
 
             .image-box img {
