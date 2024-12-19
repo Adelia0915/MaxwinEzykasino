@@ -1,0 +1,119 @@
+/* Bagian Latar Belakang */
+.background-image {
+    background-image: url('https://i.ibb.co/n74zC82/casino-chips-background-hd-8k-wallpaper-stock-photographic-image-890746-35288.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+    padding: 100px 20px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5); /* Gelap transparan */
+}
+
+.background-image h1 {
+    font-size: 2.5em; /* Ukuran font lebih besar untuk judul */
+    margin: 0;
+    color: #ffcc00; /* Warna judul kuning cerah */
+}
+
+.background-image p {
+    font-size: 1.5em;
+    color: #f1f1f1; /* Warna teks paragraf putih */
+}
+
+/* Scroll ke bawah teks */
+.scroll-down {
+    margin-top: 20px; /* Memberikan jarak antara judul dan teks scroll */
+    font-size: 1.2em;
+    color: white; /* Warna teks putih */
+}
+
+.arrow {
+    font-size: 2em; /* Ukuran panah lebih besar */
+    display: inline-block;
+    margin-left: 10px; /* Memberikan jarak antara teks dan panah */
+    animation: bounce 1.5s infinite; /* Animasi panah naik turun */
+}
+
+/* Animasi untuk panah */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px); /* Panah bergerak ke atas */
+    }
+    60% {
+        transform: translateY(-5px); /* Panah kembali ke posisi semula */
+    }
+}
+
+/* Kontainer Landing */
+.landing-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.welcome-text {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #ffcc00;
+}
+
+/* Gaya untuk Kontainer Gambar */
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+    grid-template-rows: repeat(3, 200px); /* 3 baris */
+    gap: 20px;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: #f0f0f0; /* Latar belakang abu-abu terang pada kontainer gambar */
+    padding: 20px; /* Menambahkan padding di dalam kontainer */
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Menjaga rasio gambar */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+}
+
+/* Media Query untuk Responsif di Layar Lebar Kecil (seperti smartphone) */
+@media (max-width: 768px) {
+    .background-image {
+        padding: 50px 20px;
+    }
+
+    .image-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+    }
+
+    .welcome-text {
+        font-size: 1.2em;
+    }
+}
+
+/* Media Query untuk Tampilan di Smartphone */
+@media (max-width: 480px) {
+    .image-container {
+        grid-template-columns: 1fr; /* 1 kolom */
+    }
+
+    .background-image h1 {
+        font-size: 2em; /* Ukuran font judul di smartphone */
+    }
+
+    .background-image p {
+        font-size: 1.2em; /* Ukuran font paragraf di smartphone */
+    }
+
+    .welcome-text {
+        font-size: 1.2em; /* Ukuran font sambutan di smartphone */
+    }
+}
