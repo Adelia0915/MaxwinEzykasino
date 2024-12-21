@@ -75,6 +75,43 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Tombol Melayang */
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000; /* Pastikan tombol di atas konten lain */
+}
+
+/* Gaya Tombol */
+.floating-buttons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffcc00;
+    color: #000;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Tombol Hover */
+.floating-buttons a:hover {
+    background-color: #e6b800;
+}
+
+/* Ikon di dalam tombol (Opsional) */
+.floating-buttons a i {
+    margin-right: 8px;
+}
+
 /* Media Query Responsif */
 @media (max-width: 768px) {
     .background-image {
