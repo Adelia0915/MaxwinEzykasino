@@ -169,6 +169,37 @@
         .btn-play:hover {
             background-color: #e6b800;
         }
+
+        /* Tombol Melayang */
+        .floating-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .floating-buttons button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 32px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 200px;  /* Lebar tombol agar lebih seragam */
+        }
+
+        .floating-buttons button:hover {
+            background-color: #45a049;
+        }
+
+        /* Menambahkan margin pada bagian bawah konten agar tombol tidak tertutup */
+        .landing-container {
+            margin-bottom: 150px;  /* Disesuaikan dengan tinggi tombol */
+        }
     </style>
 </head>
 <body>
@@ -205,6 +236,13 @@
             <div class="image-box"><img src="https://i.ibb.co/K0wpST9/Ezykasinomaxwin8.png" alt="Gambar 8"></div>
             <div class="image-box"><img src="https://i.ibb.co/rbSP4wG/Ezykasinomaxwin9.png" alt="Gambar 9"></div>
         </div>
+    </div>
+
+    <!-- Tombol Melayang -->
+    <div class="floating-buttons">
+        <button onclick="window.location.href='https://10ezykasino.net/'">Login</button>
+        <button onclick="window.location.href='https://direct.lc.chat/10963232/'">LiveChat</button>
+        <button onclick="window.location.href='http://cutt.ly/wanewezykasino'">WhatsApp</button>
     </div>
 
 </body>
