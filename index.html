@@ -173,13 +173,14 @@
         /* Tombol Melayang */
         .floating-buttons {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 30px; /* Jarak dari bawah layar */
+            left: 50%;
+            transform: translateX(-50%); /* Mengatur tombol agar berada di tengah */
             z-index: 100;
             display: flex;
             flex-direction: column; /* Menyusun tombol secara vertikal */
-            align-items: center; /* Menyelaraskan tombol ke tengah */
-            gap: 10px; /* Memberikan jarak antar tombol */
+            gap: 15px; /* Memberikan jarak antar tombol */
+            align-items: center;
         }
 
         .floating-buttons button {
@@ -271,8 +272,8 @@
     </div>
 
     <!-- Tombol Piramida -->
-    <div class="pyramid-buttons">
-        <button class="top" onclick="window.location.href='https://10ezykasino.net/'">Login</button>
+    <div class="floating-buttons">
+        <button onclick="window.location.href='https://10ezykasino.net/'">Login</button>
         <button onclick="window.location.href='https://direct.lc.chat/10963232/'">LiveChat</button>
     </div>
 
