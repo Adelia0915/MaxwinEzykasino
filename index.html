@@ -170,7 +170,7 @@
             background-color: #e6b800;
         }
 
-        /* Tombol Melayang */
+        /* Tombol Melayang Horizontal dan Tengah */
         .floating-buttons {
             position: fixed;
             bottom: 30px; /* Jarak dari bawah layar */
@@ -178,9 +178,8 @@
             transform: translateX(-50%); /* Mengatur tombol agar berada di tengah */
             z-index: 100;
             display: flex;
-            flex-direction: column; /* Menyusun tombol secara vertikal */
-            gap: 15px; /* Memberikan jarak antar tombol */
-            align-items: center;
+            justify-content: center;
+            gap: 20px; /* Menambah jarak antar tombol */
         }
 
         .floating-buttons button {
@@ -201,36 +200,6 @@
         /* Menambahkan margin pada bagian bawah konten agar tombol tidak tertutup */
         .landing-container {
             margin-bottom: 150px;  /* Disesuaikan dengan tinggi tombol */
-        }
-
-        /* Tombol Piramida */
-        .pyramid-buttons {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: absolute;
-            bottom: 30px;
-            right: 30px;
-            z-index: 100;
-        }
-
-        .pyramid-buttons button {
-            width: 200px;
-            margin: 10px 0;
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .pyramid-buttons .top {
-            width: 250px;
-        }
-
-        .pyramid-buttons button:hover {
-            background-color: #45a049;
         }
 
     </style>
@@ -271,7 +240,7 @@
         </div>
     </div>
 
-    <!-- Tombol Piramida -->
+    <!-- Tombol Melayang Horizontal dan Tengah -->
     <div class="floating-buttons">
         <button onclick="window.location.href='https://10ezykasino.net/'">Login</button>
         <button onclick="window.location.href='https://direct.lc.chat/10963232/'">LiveChat</button>
