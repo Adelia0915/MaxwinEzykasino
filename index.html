@@ -16,18 +16,13 @@
     <meta name="twitter:image" content="https://i.ibb.co/n74zC82/casino-chips-background-hd-8k-wallpaper-stock-photographic-image-890746-35288.jpg">
     <title>Jackpot Harian Ezykasino</title>
     <style>
-        /* CSS di dalam file untuk kemudahan testing */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
         }
 
-        /* Latar Belakang */
         .background-image {
-            background: linear-gradient(
-                rgba(0, 0, 0, 0.6),
-                rgba(0, 0, 0, 0.6)
-            ),
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
             url('https://i.ibb.co/n74zC82/casino-chips-background-hd-8k-wallpaper-stock-photographic-image-890746-35288.jpg');
             background-size: cover;
             background-position: center;
@@ -51,7 +46,6 @@
             margin: 10px 0;
         }
 
-        /* Efek animasi untuk teks tombol */
         @keyframes bounceTextButton {
             0%, 100% {
                 transform: translateY(0);
@@ -84,7 +78,6 @@
             }
         }
 
-        /* Kontainer Landing */
         .landing-container {
             padding: 20px;
             background-color: #f8f9fa;
@@ -95,63 +88,58 @@
             font-size: 1.5rem;
             font-weight: bold;
             margin: 20px 0;
-            background-color: #8B4513; /* Latar belakang coklat */
-            color: white; /* Teks putih */
+            background-color: #8B4513;
+            color: white;
             padding: 20px;
             border-radius: 10px;
         }
 
         .image-container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 kolom untuk desktop */
-            gap: 15px; /* Memberikan jarak antar gambar */
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
             justify-items: center;
             margin: 20px auto;
-            max-width: 1200px; /* Maksimal lebar container */
-            background-color: #8B4513; /* Warna latar belakang coklat */
-            padding: 20px; /* Memberikan sedikit padding agar tidak menempel gambar */
-            border-radius: 10px; /* Agar sudutnya melengkung */
+            max-width: 1200px;
+            background-color: #8B4513;
+            padding: 20px;
+            border-radius: 10px;
         }
 
         .image-box {
-            background-color: white; /* Gambar dengan latar belakang putih */
+            background-color: white;
             border-radius: 8px;
-            overflow: hidden; /* Agar border melingkari gambar */
+            overflow: hidden;
         }
 
         .image-box img {
             width: 100%;
-            height: 200px; /* Ukuran gambar seragam */
+            height: 200px;
             object-fit: cover;
-            display: block; /* Menghilangkan jarak kosong di bawah gambar */
+            display: block;
         }
 
-        /* Responsif */
         @media (max-width: 1024px) {
             .background-image h1 {
                 font-size: 2rem;
             }
-
             .image-container {
-                grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk layar medium */
+                grid-template-columns: repeat(2, 1fr);
             }
-
             .image-box img {
-                height: 180px; /* Mengurangi tinggi gambar pada layar medium */
+                height: 180px;
             }
         }
 
         @media (max-width: 768px) {
             .image-container {
-                grid-template-columns: 1fr; /* 1 kolom untuk layar kecil */
+                grid-template-columns: 1fr;
             }
-
             .image-box img {
-                height: 150px; /* Mengurangi tinggi gambar pada layar kecil */
+                height: 150px;
             }
         }
 
-        /* Tombol */
         .btn-play {
             display: inline-block;
             background-color: #ffcc00;
@@ -170,16 +158,15 @@
             background-color: #e6b800;
         }
 
-        /* Tombol Melayang */
         .floating-buttons {
             position: fixed;
             bottom: 20px;
             right: 20px;
             z-index: 100;
             display: flex;
-            flex-direction: column; /* Menyusun tombol secara vertikal */
-            align-items: center; /* Menyelaraskan tombol ke tengah */
-            gap: 10px; /* Memberikan jarak antar tombol */
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
         }
 
         .floating-buttons button {
@@ -190,19 +177,17 @@
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
-            width: 200px;  /* Lebar tombol agar lebih seragam */
+            width: 200px;
         }
 
         .floating-buttons button:hover {
             background-color: #45a049;
         }
 
-        /* Menambahkan margin pada bagian bawah konten agar tombol tidak tertutup */
         .landing-container {
-            margin-bottom: 150px;  /* Disesuaikan dengan tinggi tombol */
+            margin-bottom: 150px;
         }
 
-        /* Tombol Piramida */
         .pyramid-buttons {
             display: flex;
             flex-direction: column;
@@ -236,28 +221,21 @@
 </head>
 <body>
 
-    <!-- Bagian Latar Belakang -->
     <div class="background-image">
         <h1>Selamat Datang di Jackpot Harian Ezykasino</h1>
         <p>Mainkan Sekarang Juga !!!</p>
-
-        <!-- Tombol dengan link dan animasi -->
         <a href="http://10ezykasino.net" class="btn-play" target="_blank">Mainkan Sekarang</a>
-
-        <!-- Teks Scroll ke bawah dengan panah -->
         <div class="scroll-down">
             <p>Scroll ke bawah <span class="arrow">&#8595;</span></p>
         </div>
     </div>
 
-    <!-- Kontainer Landing -->
     <div class="landing-container">
         <div class="welcome-text">
             Siap Menjadi Pemenang Selanjutnya? Jackpot Harian Menanti!
         </div>
 
         <div class="image-container">
-            <!-- 9 Kotak Gambar -->
             <div class="image-box"><img src="https://i.ibb.co/XYwmXR6/Ezykasinomaxwin7.png" alt="Gambar 1"></div>
             <div class="image-box"><img src="https://i.ibb.co/rvWn0Qh/Ezykasinomaxwin6.png" alt="Gambar 2"></div>
             <div class="image-box"><img src="https://i.ibb.co/MVYhDmB/Ezykasinomaxwin5.png" alt="Gambar 3"></div>
@@ -270,7 +248,6 @@
         </div>
     </div>
 
-    <!-- Tombol Piramida -->
     <div class="pyramid-buttons">
         <button class="top" onclick="window.location.href='https://10ezykasino.net/'">Login</button>
         <button onclick="window.location.href='https://direct.lc.chat/10963232/'">LiveChat</button>
