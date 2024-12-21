@@ -1,89 +1,14 @@
-/* Latar Belakang */
-.background-image {
-    background: linear-gradient(
-            rgba(0, 0, 0, 0.6), 
-            rgba(0, 0, 0, 0.6)
-        ), 
-        url('https://i.ibb.co/n74zC82/casino-chips-background-hd-8k-wallpaper-stock-photographic-image-890746-35288.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh; /* Pastikan latar penuh */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    color: white;
-    padding: 20px;
-}
-
-/* Teks Latar Belakang */
-.background-image h1 {
-    font-size: 3em;
-    font-weight: bold;
-    color: #ffcc00;
-    margin: 10px 0;
-}
-
-.background-image p {
-    font-size: 1.2em;
-    margin: 5px 0;
-}
-
-/* Scroll ke Bawah */
-.scroll-down {
-    margin-top: 20px;
-    font-size: 1.2em;
-    color: white;
-}
-
-.arrow {
-    font-size: 1.5em;
-    margin-left: 5px;
-    animation: bounce 1.5s infinite;
-}
-
-/* Animasi Panah */
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-10px);
-    }
-    60% {
-        transform: translateY(-5px);
-    }
-}
-
-/* Kontainer Gambar */
-.image-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 20px;
-    background-color: #8B4513; /* Warna coklat */
-    margin: 20px auto;
-    max-width: 1200px; /* Maksimal lebar container */
-}
-
-.image-container img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
 /* Tombol Melayang */
 .floating-buttons {
     position: fixed;
     bottom: 20px;
     right: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* Tombol sekarang akan berbaris horizontal */
+    justify-content: space-between; /* Memberi jarak antar tombol */
     gap: 10px;
     z-index: 1000; /* Pastikan tombol di atas konten lain */
+    width: 300px; /* Lebar kontainer tombol */
 }
 
 /* Gaya Tombol */
@@ -91,20 +16,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffcc00;
-    color: #000;
+    background: linear-gradient(45deg, #ffcc00, #ff6600); /* Gradien warna dari kuning ke oranye */
+    color: white;
     padding: 12px 20px;
     font-size: 1rem;
     font-weight: bold;
     border-radius: 50px;
     text-decoration: none;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease-in-out; /* Efek transisi yang halus */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    flex: 1; /* Agar tombol memiliki lebar yang sama */
 }
 
 /* Tombol Hover */
 .floating-buttons a:hover {
-    background-color: #e6b800;
+    background: linear-gradient(45deg, #ff6600, #ffcc00); /* Gradien terbalik saat hover */
+    transform: translateY(-5px); /* Efek angkat saat hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Menambah bayangan lebih besar saat hover */
 }
 
 /* Ikon di dalam tombol (Opsional) */
@@ -130,5 +58,26 @@
 
     .image-container img {
         height: 150px; /* Mengurangi tinggi gambar pada layar kecil */
+    }
+
+    /* Tombol Melayang pada Layar Kecil */
+    .floating-buttons {
+        flex-direction: column; /* Mengubah tombol kembali ke vertikal pada layar kecil */
+        width: auto;
+        gap: 20px; /* Memberi jarak lebih antar tombol */
+    }
+
+    .floating-buttons a {
+        flex: unset; /* Membuat tombol tidak memiliki lebar yang sama */
+    }
+
+    /* Membuat tombol diatur dalam format piramida */
+    .floating-buttons a:nth-child(1) {
+        width: 100%; /* Tombol pertama mengambil lebar penuh */
+    }
+    
+    .floating-buttons a:nth-child(2),
+    .floating-buttons a:nth-child(3) {
+        width: 48%; /* Tombol kedua dan ketiga lebih kecil */
     }
 }
