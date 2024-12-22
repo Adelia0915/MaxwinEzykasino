@@ -164,13 +164,13 @@
         .floating-text {
             position: fixed;
             bottom: 90px;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 100%;
+            transform: translateX(-100%);
             font-size: 1.2rem;
             font-weight: bold;
             color: white;
             white-space: nowrap;
-            animation: slideLeft 5s linear infinite;
+            animation: slideLeft 10s linear infinite;
         }
 
         @keyframes slideLeft {
@@ -236,18 +236,27 @@
     <script>
         // Array pesan random
         const messages = [
-            "kar*** Withdraw 12.500.000",
+            "Jag*** Withdraw 12.500.000",
             "Mar*** Withdraw 3.000.000",
-            "jag*** Withdraw 5.000.000",
-            "amp*** Withdraw 10.000.000",
-            "kon*** Withdraw 7.500.000"
+            "4ri*** Withdraw 5.000.000",
+            "jam*** Withdraw 10.000.000",
+            "tur*** Withdraw 7.500.000"
         ];
 
-        // Pilih pesan secara acak
-        const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+        let currentMessageIndex = 0;
 
-        // Masukkan pesan ke dalam elemen
-        document.getElementById('randomText').textContent = randomMessage;
+        // Fungsi untuk mengganti pesan secara berkala
+        function changeMessage() {
+            // Pilih pesan secara acak
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById('randomText').textContent = randomMessage;
+        }
+
+        // Panggil fungsi changeMessage setiap 5 detik
+        setInterval(changeMessage, 5000);
+
+        // Tampilkan pesan pertama kali
+        changeMessage();
     </script>
 
 </body>
