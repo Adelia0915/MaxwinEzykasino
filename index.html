@@ -69,30 +69,6 @@
             }
         }
 
-        .floating-text {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            font-size: 1.5rem;
-            color: #ffcc00;
-            animation: floatText 5s ease-in-out infinite;
-        }
-
-        @keyframes floatText {
-            0% {
-                opacity: 0;
-                transform: translateX(100%);
-            }
-            50% {
-                opacity: 1;
-                transform: translateX(0);
-            }
-            100% {
-                opacity: 0;
-                transform: translateX(-100%);
-            }
-        }
-
         .landing-container {
             padding: 20px;
             background-color: #f8f9fa;
@@ -187,6 +163,23 @@
         .landing-container {
             margin-bottom: 150px;
         }
+
+        .floating-text {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffcc00;
+            animation: floatText 3s infinite;
+        }
+
+        @keyframes floatText {
+            0% { top: 30%; opacity: 1; }
+            50% { top: 40%; opacity: 0; }
+            100% { top: 30%; opacity: 1; }
+        }
     </style>
 </head>
 <body>
@@ -202,7 +195,7 @@
     </div>
 
     <!-- Teks melayang acak -->
-    <div class="floating-text" id="floatingText"></div>
+    <div id="floating-text" class="floating-text"></div>
 
     <div class="landing-container">
         <div class="welcome-text">
@@ -214,25 +207,7 @@
             <div class="image-box"><img src="https://i.ibb.co/XYwmXR6/Ezykasinomaxwin7.png" alt="Gambar 1"></div>
             <div class="image-box"><img src="https://i.ibb.co/rvWn0Qh/Ezykasinomaxwin6.png" alt="Gambar 2"></div>
             <div class="image-box"><img src="https://i.ibb.co/MVYhDmB/Ezykasinomaxwin5.png" alt="Gambar 3"></div>
-            <div class="image-box"><img src="https://i.ibb.co/z2sZ2T5/Ezykasinomaxwin4.png" alt="Gambar 4"></div>
-            <div class="image-box"><img src="https://i.ibb.co/xqC2GrQ/Ezykasinomaxwin3.png" alt="Gambar 5"></div>
-            <div class="image-box"><img src="https://i.ibb.co/1bwtdN9/Ezykasinomaxwin2.png" alt="Gambar 6"></div>
-            <div class="image-box"><img src="https://i.ibb.co/PN9q0tG/Ezykasinomaxwin1.png" alt="Gambar 7"></div>
-            <div class="image-box"><img src="https://i.ibb.co/K0wpST9/Ezykasinomaxwin8.png" alt="Gambar 8"></div>
-            <div class="image-box"><img src="https://i.ibb.co/rbSP4wG/Ezykasinomaxwin9.png" alt="Gambar 9"></div>
-            <div class="image-box"><img src="https://i.ibb.co/GTQ6v4f/Ezykasinomaxwin1.png" alt="Gambar 10"></div>
-            <div class="image-box"><img src="https://i.ibb.co/31bFbvj/Ezykasinomaxwin2.png" alt="Gambar 11"></div>
-            <div class="image-box"><img src="https://i.ibb.co/jHTpB7s/Ezykasinomaxwin3.png" alt="Gambar 12"></div>
-            <div class="image-box"><img src="https://i.ibb.co/N20ZztN/Ezykasinomaxwin4.png" alt="Gambar 13"></div>
-            <div class="image-box"><img src="https://i.ibb.co/gmYBSpX/Ezykasinomaxwin5.png" alt="Gambar 14"></div>
-            <div class="image-box"><img src="https://i.ibb.co/Sfhjr2V/Ezykasinomaxwin6.png" alt="Gambar 15"></div>
-            <div class="image-box"><img src="https://i.ibb.co/grd9cZG/Ezykasinomaxwin7.png" alt="Gambar 16"></div>
-            <div class="image-box"><img src="https://i.ibb.co/PF1bDnx/Ezykasinomaxwin8.png" alt="Gambar 17"></div>
-            <div class="image-box"><img src="https://i.ibb.co/XZwnC5Z/Ezykasinomaxwin9.png" alt="Gambar 18"></div>
-            <div class="image-box"><img src="https://i.ibb.co/7k6s6KZ/Ezykasinomaxwin10.png" alt="Gambar 19"></div>
-            <div class="image-box"><img src="https://i.ibb.co/0CWTzF0/Ezykasinomaxwin11.png" alt="Gambar 20"></div>
-            <div class="image-box"><img src="https://i.ibb.co/qyLQW9W/Ezykasinomaxwin12.png" alt="Gambar 21"></div>
-            <div class="image-box"><img src="https://i.ibb.co/dLRFDf9/Ezykasinomaxwin13.png" alt="Gambar 22"></div>
+            <!-- Gambar lainnya -->
         </div>
     </div>
 
@@ -242,7 +217,26 @@
     </div>
 
     <script>
-        // Array of random text options
-        const texts = [
+        const messages = [
             "kar*** Withdraw 12.500.000",
-            "berita terbaru: Event Maxwin Akhir Tahun Menunggu Anda !!!
+            "win*** Jackpot 10.000.000",
+            "use** Withdraw 5.000.000",
+            "pla*** Jackpot 2.500.000",
+            "arm** Withdraw 7.300.000"
+        ];
+
+        function getRandomMessage() {
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            return messages[randomIndex];
+        }
+
+        function displayRandomMessage() {
+            const textElement = document.getElementById("floating-text");
+            textElement.innerText = getRandomMessage();
+        }
+
+        setInterval(displayRandomMessage, 3000); // Update setiap 3 detik
+    </script>
+
+</body>
+</html>
