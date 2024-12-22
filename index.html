@@ -69,6 +69,30 @@
             }
         }
 
+        .floating-text {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: #ffcc00;
+            animation: floatText 5s ease-in-out infinite;
+        }
+
+        @keyframes floatText {
+            0% {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            50% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+        }
+
         .landing-container {
             padding: 20px;
             background-color: #f8f9fa;
@@ -177,6 +201,9 @@
         </div>
     </div>
 
+    <!-- Teks melayang acak -->
+    <div class="floating-text" id="floatingText"></div>
+
     <div class="landing-container">
         <div class="welcome-text">
             Siap Menjadi Pemenang Selanjutnya? Jackpot Harian Menanti!
@@ -214,5 +241,8 @@
         <button onclick="window.location.href='https://direct.lc.chat/10963232/'">LiveChat</button>
     </div>
 
-</body>
-</html>
+    <script>
+        // Array of random text options
+        const texts = [
+            "kar*** Withdraw 12.500.000",
+            "berita terbaru: Event Maxwin Akhir Tahun Menunggu Anda !!!
