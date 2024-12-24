@@ -1,9 +1,11 @@
 <style>
+    /* General Styles */
     body {
         margin: 0;
         font-family: Arial, sans-serif;
     }
 
+    /* Background Section */
     .background-image {
         background: linear-gradient(
             rgba(0, 0, 0, 0.6),
@@ -29,15 +31,15 @@
 
     .scroll-down {
         margin-top: 20px;
-        font-size: 2rem; /* Ukuran teks lebih besar */
+        font-size: 2rem;
         font-weight: bold;
-        color: #ffcc00; /* Warna teks */
+        color: #ffcc00;
     }
 
     .arrow {
-        font-size: 2rem; /* Ukuran panah lebih besar */
+        font-size: 2rem;
         margin-left: 5px;
-        animation: bounce 1.5s infinite; /* Animasi panah bergerak ke atas dan ke bawah */
+        animation: bounce 1.5s infinite;
     }
 
     @keyframes bounce {
@@ -52,10 +54,12 @@
         }
     }
 
+    /* Landing Section */
     .landing-container {
         padding: 20px;
         background-color: #f8f9fa;
         text-align: center;
+        margin-bottom: 150px;
     }
 
     .welcome-text {
@@ -68,11 +72,11 @@
         border-radius: 10px;
     }
 
+    /* Image Grid Section */
     .image-container {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 15px;
-        justify-items: center;
         margin: 20px auto;
         max-width: 1200px;
         background-color: #8B4513;
@@ -84,38 +88,19 @@
         background-color: white;
         border-radius: 8px;
         overflow: hidden;
+        aspect-ratio: 4 / 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .image-box img {
         width: 100%;
-        height: auto; /* Menyesuaikan gambar dengan ukuran kotak */
+        height: 100%;
         object-fit: cover;
     }
 
-    @media (max-width: 1024px) {
-        .background-image h1 {
-            font-size: 2rem;
-        }
-
-        .image-container {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        .image-box img {
-            height: auto;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .image-container {
-            grid-template-columns: 1fr;
-        }
-
-        .image-box img {
-            height: auto;
-        }
-    }
-
+    /* Floating Buttons */
     .floating-buttons {
         position: fixed;
         bottom: 30px;
@@ -136,13 +121,28 @@
         font-size: 16px;
         cursor: pointer;
         width: 200px;
+        transition: background-color 0.3s ease;
     }
 
     .floating-buttons button:hover {
         background-color: #45a049;
     }
 
-    .landing-container {
-        margin-bottom: 150px;
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .background-image h1 {
+            font-size: 2rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .image-container {
+            grid-template-columns: 1fr;
+        }
+
+        .floating-buttons {
+            flex-direction: column;
+            gap: 10px;
+        }
     }
 </style>
