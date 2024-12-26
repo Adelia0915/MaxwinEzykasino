@@ -110,6 +110,30 @@
             display: block;
         }
 
+        @media (max-width: 1024px) {
+            .background-image h1 {
+                font-size: 2rem;
+            }
+
+            .image-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .image-box img {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .image-container {
+                grid-template-columns: 1fr;
+            }
+
+            .image-box img {
+                height: 150px;
+            }
+        }
+
         .floating-buttons {
             position: fixed;
             bottom: 30px;
@@ -134,39 +158,65 @@
             overflow: hidden;
         }
 
-        .floating-buttons button::before {
+        .floating-buttons button:before {
             content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 300%;
-            height: 300%;
-            background-color: rgba(255, 69, 0, 0.8); /* Warna api */
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            animation: fireEffect 1.5s infinite;
-        }
-
-        @keyframes fireEffect {
-            0% {
-                width: 300%;
-                height: 300%;
-                opacity: 1;
-            }
-            50% {
-                width: 0%;
-                height: 0%;
-                opacity: 0.5;
-            }
-            100% {
-                width: 300%;
-                height: 300%;
-                opacity: 1;
-            }
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, red, orange, yellow);
+            background-size: 400% 400%;
+            animation: fireEffect 2s infinite;
+            z-index: 1;
+            filter: blur(8px);
         }
 
         .floating-buttons button:hover {
             background-color: #45a049;
+        }
+
+        .floating-buttons button span {
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes fireEffect {
+            0% {
+                background-position: 400% 0;
+            }
+            50% {
+                background-position: 0 100%;
+            }
+            100% {
+                background-position: 400% 0;
+            }
+        }
+
+        /* Animasi teks melayang */
+        .floating-text {
+            position: fixed;
+            bottom: 90px;
+            left: 100%;
+            transform: translateX(-100%);
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            white-space: nowrap;
+            animation: slideLeft 10s linear infinite;
+        }
+
+        @keyframes slideLeft {
+            0% {
+                left: 100%;
+            }
+            100% {
+                left: -100%;
+            }
+        }
+
+        .landing-container {
+            margin-bottom: 150px;
         }
     </style>
 </head>
@@ -189,7 +239,9 @@
 
         <div class="image-container">
             <!-- Gambar -->
-            <!-- Anda dapat menambahkan gambar di sini -->
+            <div class="image-box"><img src="https://i.ibb.co/LpfG5sP/Ezykasinomaxwin1.png" alt="Gambar 1"></div>
+            <div class="image-box"><img src="https://i.ibb.co/rvWn0Qh/Ezykasinomaxwin6.png" alt="Gambar 2"></div>
+            <div class="image-box"><img src="https://i.ibb.co/MBypRtC/Ezykasinomaxwin3.png" alt="Gambar 3"></div>
         </div>
     </div>
 
@@ -199,5 +251,20 @@
         <button id="liveChatButton" onclick="window.location.href='https://direct.lc.chat/10963232/'">Live Chat</button>
     </div>
 
-</body>
-</html>
+    <!-- Teks Melayang Random -->
+    <div id="randomText" class="floating-text"></div>
+
+    <script>
+        // Array pesan random
+        const messages = [
+            "mon*** Withdraw 12.500.000",
+            "kar*** Withdraw 3.000.000",
+            "arc*** Withdraw 5.000.000",
+            "xio*** Withdraw 10.000.000",
+            "dio*** Withdraw 13.580.000",
+            "irf*** Withdraw 39.500.000",
+            "por*** Withdraw 7.500.000"
+        ];
+
+        // Ambil elemen teks melayang
+        const randomTextElement = document
