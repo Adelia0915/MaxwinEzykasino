@@ -44,6 +44,96 @@
             color: #ffcc00;
         }
 
+        .scroll-down {
+            margin-top: 20px;
+            font-size: 2rem; /* Ukuran teks lebih besar */
+            font-weight: bold;
+            color: #ffcc00; /* Warna teks */
+        }
+
+        .arrow {
+            font-size: 2rem; /* Ukuran panah lebih besar */
+            margin-left: 5px;
+            animation: bounce 1.5s infinite; /* Animasi panah bergerak ke atas dan ke bawah */
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(10px);
+            }
+        }
+
+        .landing-container {
+            padding: 20px;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        .welcome-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 20px 0;
+            background-color: #8B4513;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            justify-items: center;
+            margin: 20px auto;
+            max-width: 1200px;
+            background-color: #8B4513;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .image-box {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        @media (max-width: 1024px) {
+            .background-image h1 {
+                font-size: 2rem;
+            }
+
+            .image-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .image-box img {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .image-container {
+                grid-template-columns: 1fr;
+            }
+
+            .image-box img {
+                height: 150px;
+            }
+        }
+
         .floating-buttons {
             position: fixed;
             bottom: 30px;
@@ -64,40 +154,10 @@
             font-size: 16px;
             cursor: pointer;
             width: 200px;
-            position: relative;
-            overflow: hidden;
-            transition: background-color 0.3s ease;
         }
 
         .floating-buttons button:hover {
             background-color: #45a049;
-        }
-
-        /* Efek Api dengan Pseudo-element */
-        .floating-buttons button::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            background: url('https://i.ibb.co/dmn7qjv/fire.gif') repeat;
-            background-size: cover;
-            animation: fireAnimation 1.5s linear infinite;
-            z-index: -1; /* Agar api di belakang tombol */
-        }
-
-        /* Animasi api */
-        @keyframes fireAnimation {
-            0% {
-                transform: scaleX(1) scaleY(1);
-            }
-            50% {
-                transform: scaleX(1.05) scaleY(1.05);
-            }
-            100% {
-                transform: scaleX(1) scaleY(1);
-            }
         }
 
         /* Animasi teks melayang */
@@ -121,6 +181,10 @@
                 left: -100%;
             }
         }
+
+        .landing-container {
+            margin-bottom: 150px;
+        }
     </style>
 </head>
 <body>
@@ -128,6 +192,51 @@
     <div class="background-image">
         <h1>Selamat Datang di Jackpot Harian Ezykasino</h1>
         <p>Mainkan Sekarang Juga dan Menangkan Hadiah Besar!</p>
+
+        <!-- Teks Scroll ke bawah dengan animasi panah -->
+        <div class="scroll-down">
+            <p>Scroll ke bawah <span class="arrow">&#8595;</span></p>
+        </div>
+    </div>
+
+    <div class="landing-container">
+        <div class="welcome-text">
+            Siap Menjadi Pemenang Selanjutnya? Jackpot Harian Menanti!
+        </div>
+
+        <div class="image-container">
+            <!-- Gambar -->
+            <div class="image-box"><img src="https://i.ibb.co/LpfG5sP/Ezykasinomaxwin1.png" alt="Gambar 1"></div>
+            <div class="image-box"><img src="https://i.ibb.co/rvWn0Qh/Ezykasinomaxwin6.png" alt="Gambar 2"></div>
+            <div class="image-box"><img src="https://i.ibb.co/MBypRtC/Ezykasinomaxwin3.png" alt="Gambar 3"></div>
+            <div class="image-box"><img src="https://i.ibb.co/x51tnmP/Ezykasinomaxwin4.png" alt="Gambar 4"></div>
+            <div class="image-box"><img src="https://i.ibb.co/XjLq9jP/Ezykasinomaxwin5.png" alt="Gambar 5"></div>
+            <div class="image-box"><img src="https://i.ibb.co/DR6Z4Hc/Ezykasinomaxwin6.png" alt="Gambar 6"></div>
+            <div class="image-box"><img src="https://i.ibb.co/f9XGScW/Ezykasinomaxwin7.png" alt="Gambar 7"></div>
+            <div class="image-box"><img src="https://i.ibb.co/d28Y0mc/Ezykasinomaxwin8.png" alt="Gambar 8"></div>
+            <div class="image-box"><img src="https://i.ibb.co/JpXwyMs/Ezykasinomaxwin9.png" alt="Gambar 9"></div>
+            <div class="image-box"><img src="https://i.ibb.co/GTQ6v4f/Ezykasinomaxwin1.png" alt="Gambar 10"></div>
+            <div class="image-box"><img src="https://i.ibb.co/NKhcQ1p/Ezykasinomaxwin11.png" alt="Gambar 11"></div>
+            <div class="image-box"><img src="https://i.ibb.co/02Z4PjS/Ezykasinomaxwin12.png" alt="Gambar 12"></div>
+            <div class="image-box"><img src="https://i.ibb.co/fYdjGYT/Ezykasinomaxwin13.png" alt="Gambar 13"></div>
+            <div class="image-box"><img src="https://i.ibb.co/tH1BbML/Ezykasinomaxwin14.png" alt="Gambar 14"></div>
+            <div class="image-box"><img src="https://i.ibb.co/bR7pk2W/Ezykasinomaxwin15.png" alt="Gambar 15"></div>
+            <div class="image-box"><img src="https://i.ibb.co/fQ4kX4K/Ezykasinomaxwin16.png" alt="Gambar 16"></div>
+            <div class="image-box"><img src="https://i.ibb.co/CMk67kb/Ezykasinomaxwin17.png" alt="Gambar 17"></div>
+            <div class="image-box"><img src="https://i.ibb.co/XZwnC5Z/Ezykasinomaxwin9.png" alt="Gambar 18"></div>
+            <div class="image-box"><img src="https://i.ibb.co/dGsh4jP/Ezykasinomaxwin19.png" alt="Gambar 19"></div>
+            <div class="image-box"><img src="https://i.ibb.co/2tcpkSc/Ezykasinomaxwin20.png" alt="Gambar 20"></div>
+            <div class="image-box"><img src="https://i.ibb.co/t4SPrfH/Ezykasinomaxwin21.png" alt="Gambar 21"></div>
+            <div class="image-box"><img src="https://i.ibb.co/71LXxYm/Ezykasinomaxwin6.png" alt="Gambar 22"></div>
+            <div class="image-box"><img src="https://i.ibb.co/yRgnLTr/Ezykasinomaxwin23.png" alt="Gambar 23"></div>
+            <div class="image-box"><img src="https://i.ibb.co/SJrzTyW/Ezykasino2.png" alt="Gambar 24"></div>
+            <div class="image-box"><img src="https://i.ibb.co/G0Y6jQb/Ezykasinomaxwin25.png" alt="Gambar 25"></div>
+            <div class="image-box"><img src="https://i.ibb.co/pKLsYtF/Ezykasinomaxwin26.png" alt="Gambar 26"></div>
+            <div class="image-box"><img src="https://i.ibb.co/MpBLGTJ/Ezykasinomaxwin27.png" alt="Gambar 27"></div>
+            <div class="image-box"><img src="https://i.ibb.co/C510pqy/Ezykasinomaxwin28.png" alt="Gambar 28"></div>
+            <div class="image-box"><img src="https://i.ibb.co/qDTSKP0/Ezykasinomaxwin29.png" alt="Gambar 29"></div>
+            <div class="image-box"><img src="https://i.ibb.co/qdNhtZ4/Ezykasinomaxwin30.png" alt="Gambar 30"></div>
+        </div>
     </div>
 
     <!-- Tombol Floating -->
