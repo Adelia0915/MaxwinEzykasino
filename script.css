@@ -124,8 +124,10 @@
         position: relative;
         overflow: hidden;
         transition: background-color 0.3s ease;
+        box-shadow: 0 0 15px rgba(255, 140, 0, 0.6); /* Optional: add a glowing effect */
     }
 
+    /* Hover effect */
     .floating-buttons button:hover {
         background-color: #e65c00; /* Darker shade of orange for hover effect */
     }
@@ -146,6 +148,7 @@
         pointer-events: none;
     }
 
+    /* Hover effect for fire animation */
     .floating-buttons button:hover:before {
         opacity: 1;
         animation: fire-effect 0.5s infinite;
