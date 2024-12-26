@@ -100,7 +100,7 @@
         object-fit: cover;
     }
 
-    /* Floating Buttons with Fire Effect */
+    /* Floating Buttons */
     .floating-buttons {
         position: fixed;
         bottom: 30px;
@@ -113,9 +113,7 @@
     }
 
     .floating-buttons button {
-        position: relative;
-        overflow: hidden;
-        background-color: #FF5722; /* Warna api */
+        background-color: #ff6a00; /* Base color of the button */
         color: white;
         padding: 15px 32px;
         border: none;
@@ -123,45 +121,48 @@
         font-size: 16px;
         cursor: pointer;
         width: 200px;
-        transition: all 0.4s ease;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Memberikan sedikit bayangan */
-    }
-
-    .floating-buttons button:before {
-        content: '';
-        position: absolute;
-        top: -100%;
-        left: 50%;
-        width: 300%;
-        height: 300%;
-        background: radial-gradient(circle, rgba(255, 87, 34, 0.8), rgba(255, 193, 7, 0));
-        transform: translateX(-50%);
-        animation: fire 1s infinite ease-in-out;
-        z-index: 0;
+        position: relative;
+        overflow: hidden;
+        transition: background-color 0.3s ease;
     }
 
     .floating-buttons button:hover {
-        background-color: #FF5722;
-        transform: scale(1.05); /* Membesar sedikit saat hover */
-        box-shadow: 0 0 15px rgba(255, 87, 34, 0.5), 0 0 25px rgba(255, 87, 34, 0.5);
+        background-color: #e65c00; /* Darker shade of orange for hover effect */
+    }
+
+    /* Fire effect */
+    .floating-buttons button:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300%;
+        height: 300%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0) 50%, rgba(255, 0, 0, 0.6) 100%);
+        animation: fire-effect 1s infinite;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        opacity: 0;
+        pointer-events: none;
     }
 
     .floating-buttons button:hover:before {
-        animation: fire 1s infinite ease-in-out;
-        top: 0%;
+        opacity: 1;
+        animation: fire-effect 0.5s infinite;
     }
 
-    @keyframes fire {
+    /* Fire animation */
+    @keyframes fire-effect {
         0% {
-            top: -100%;
-            opacity: 0;
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 0.5;
         }
         50% {
-            top: 30%;
-            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.5);
+            opacity: 0.8;
         }
         100% {
-            top: -100%;
+            transform: translate(-50%, -50%) scale(2);
             opacity: 0;
         }
     }
