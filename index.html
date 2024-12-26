@@ -44,6 +44,72 @@
             color: #ffcc00;
         }
 
+        .scroll-down {
+            margin-top: 20px;
+            font-size: 2rem; /* Ukuran teks lebih besar */
+            font-weight: bold;
+            color: #ffcc00; /* Warna teks */
+        }
+
+        .arrow {
+            font-size: 2rem; /* Ukuran panah lebih besar */
+            margin-left: 5px;
+            animation: bounce 1.5s infinite; /* Animasi panah bergerak ke atas dan ke bawah */
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(10px);
+            }
+        }
+
+        .landing-container {
+            padding: 20px;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        .welcome-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 20px 0;
+            background-color: #8B4513;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            justify-items: center;
+            margin: 20px auto;
+            max-width: 1200px;
+            background-color: #8B4513;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .image-box {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
         .floating-buttons {
             position: fixed;
             bottom: 30px;
@@ -68,57 +134,39 @@
             overflow: hidden;
         }
 
-        .floating-buttons button:hover {
-            background-color: #45a049;
-        }
-
-        /* Efek api pada tombol */
-        .floating-buttons button:before {
-            content: "";
+        .floating-buttons button::before {
+            content: '';
             position: absolute;
             top: 50%;
             left: 50%;
             width: 300%;
             height: 300%;
-            background: radial-gradient(circle, rgba(255, 69, 0, 0.9) 20%, transparent 20%) center/100px 100px;
-            animation: fire 1s linear infinite;
+            background-color: rgba(255, 69, 0, 0.8); /* Warna api */
+            border-radius: 50%;
             transform: translate(-50%, -50%);
-            pointer-events: none;
+            animation: fireEffect 1.5s infinite;
         }
 
-        @keyframes fire {
+        @keyframes fireEffect {
             0% {
-                background-size: 100px 100px;
+                width: 300%;
+                height: 300%;
+                opacity: 1;
+            }
+            50% {
+                width: 0%;
+                height: 0%;
+                opacity: 0.5;
             }
             100% {
-                background-size: 300px 300px;
+                width: 300%;
+                height: 300%;
+                opacity: 1;
             }
         }
 
-        /* Animasi teks melayang */
-        .floating-text {
-            position: fixed;
-            bottom: 90px;
-            left: 100%;
-            transform: translateX(-100%);
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: white;
-            white-space: nowrap;
-            animation: slideLeft 10s linear infinite;
-        }
-
-        @keyframes slideLeft {
-            0% {
-                left: 100%;
-            }
-            100% {
-                left: -100%;
-            }
-        }
-
-        .landing-container {
-            margin-bottom: 150px;
+        .floating-buttons button:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
@@ -127,11 +175,21 @@
     <div class="background-image">
         <h1>Selamat Datang di Jackpot Harian Ezykasino</h1>
         <p>Mainkan Sekarang Juga dan Menangkan Hadiah Besar!</p>
+
+        <!-- Teks Scroll ke bawah dengan animasi panah -->
+        <div class="scroll-down">
+            <p>Scroll ke bawah <span class="arrow">&#8595;</span></p>
+        </div>
     </div>
 
     <div class="landing-container">
         <div class="welcome-text">
             Siap Menjadi Pemenang Selanjutnya? Jackpot Harian Menanti!
+        </div>
+
+        <div class="image-container">
+            <!-- Gambar -->
+            <!-- Anda dapat menambahkan gambar di sini -->
         </div>
     </div>
 
@@ -140,29 +198,6 @@
         <button id="loginButton" onclick="window.location.href='https://10ezykasino.net/'">Login</button>
         <button id="liveChatButton" onclick="window.location.href='https://direct.lc.chat/10963232/'">Live Chat</button>
     </div>
-
-    <!-- Teks Melayang Random -->
-    <div id="randomText" class="floating-text"></div>
-
-    <script>
-        // Array pesan random
-        const messages = [
-            "mon*** Withdraw 12.500.000",
-            "kar*** Withdraw 3.000.000",
-            "arc*** Withdraw 5.000.000",
-            "xio*** Withdraw 10.000.000",
-            "dio*** Withdraw 13.580.000",
-            "irf*** Withdraw 39.500.000",
-            "por*** Withdraw 7.500.000",
-            "Sam** Withdraw 800.000",
-        ];
-
-        // Menampilkan pesan secara acak
-        setInterval(() => {
-            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-            document.getElementById('randomText').innerText = randomMessage;
-        }, 3000);
-    </script>
 
 </body>
 </html>
