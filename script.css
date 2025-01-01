@@ -113,7 +113,7 @@ body {
 
 .floating-buttons button {
     position: relative;
-    background-color: #BA1C1C;
+    background-color: #00CC66;
     color: white;
     padding: 15px 32px;
     border: none;
@@ -127,7 +127,7 @@ body {
 }
 
 .floating-buttons button:hover {
-    background-color: #BA1C1C;
+    background-color: #00CC66;
     box-shadow: 0 0 20px 4px rgba(255, 69, 0, 0.8); /* Efek api di luar tombol */
 }
 
